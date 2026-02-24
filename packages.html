@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore YalaSafari's safari packages - half day, full day, multi-day, photography and premium tours in Yala National Park, Sri Lanka."/>
+  <title>Safari Packages - YalaSafari</title>
+  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/header.css"/>
+  <link rel="stylesheet" href="css/footer.css"/>
+  <link rel="stylesheet" href="css/packages.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div id="header-placeholder"></div>
+
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" id="pageHeroBg"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="current">Packages</span>
+      </div>
+      <h1>Safari Packages</h1>
+      <p>Choose from our carefully curated safari experiences designed to give you the best wildlife adventure</p>
+    </div>
+  </section>
+
+
+  <!-- FILTER SECTION -->
+  <section class="packages-filter">
+    <div class="container">
+      <h2 class="filter-title reveal">Filter by Category</h2>
+      <div class="filter-buttons reveal reveal-delay-1">
+        <button class="filter-btn active" data-filter="all">All Packages</button>
+        <button class="filter-btn" data-filter="half-day">Half Day</button>
+        <button class="filter-btn" data-filter="full-day">Full Day</button>
+        <button class="filter-btn" data-filter="multi-day">Multi Day</button>
+        <button class="filter-btn" data-filter="photography">Photography</button>
+        <button class="filter-btn" data-filter="premium">Premium</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PACKAGES GRID -->
+  <section class="packages-section">
+    <div class="container">
+
+      <div class="packages-section-header">
+        <h2 class="section-title reveal">Explore Our Safari Packages</h2>
+        <p class="section-subtitle reveal reveal-delay-1">From quick half-day adventures to comprehensive multi-day expeditions</p>
+      </div>
+
+      <div class="packages-grid-full" id="packagesGrid">
+
+        <!-- Package 01 -->
+        <div class="pkg-card reveal" data-category="half-day">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-01.jpg" alt="Package 01" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Half Day</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 01</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 4-5 Hours
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Perfect for those short on time. Experience morning or evening safari with chances to spot leopards, elephants, and sloth bears.</p>
+            <ul class="pkg-card-features">
+              <li>Professional Guide</li>
+              <li>4x4 Safari Jeep</li>
+              <li>Park Entry Fees</li>
+              <li>Refreshments</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 15,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 02 -->
+        <div class="pkg-card reveal reveal-delay-1" data-category="full-day">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-02.jpg" alt="Package 02" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Full Day</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 02</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 9-10 Hours
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Comprehensive wildlife experience covering different zones of the park with lunch included.</p>
+            <ul class="pkg-card-features">
+              <li>Expert Naturalist Guide</li>
+              <li>Premium Safari Vehicle</li>
+              <li>All Entry Fees</li>
+              <li>Lunch &amp; Refreshments</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 30,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 03 -->
+        <div class="pkg-card reveal reveal-delay-2" data-category="multi-day">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-03.jpg" alt="Package 03" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Multi Day</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 03</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 2 Days / 1 Night
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Extended safari experience with accommodation, multiple game drives, and comprehensive wildlife encounters.</p>
+            <ul class="pkg-card-features">
+              <li>Hotel Accommodation</li>
+              <li>3 Safari Sessions</li>
+              <li>All Meals Included</li>
+              <li>Photography Assistance</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 90,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 04 -->
+        <div class="pkg-card reveal" data-category="half-day">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-04.jpg" alt="Package 04" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Half Day</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 04</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 5-6 Hours
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Perfect for those short on time. Experience morning or evening safari with chances to spot leopards, elephants, and sloth bears.</p>
+            <ul class="pkg-card-features">
+              <li>Professional Guide</li>
+              <li>4x4 Safari Jeep</li>
+              <li>Park Entry Fees</li>
+              <li>Refreshments</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 15,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 05 -->
+        <div class="pkg-card reveal reveal-delay-1" data-category="full-day">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-05.jpg" alt="Package 05" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Full Day</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 05</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 9-10 Hours
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Comprehensive wildlife experience covering different zones of the park with lunch included.</p>
+            <ul class="pkg-card-features">
+              <li>Expert Naturalist Guide</li>
+              <li>Premium Safari Vehicle</li>
+              <li>All Entry Fees</li>
+              <li>Lunch &amp; Refreshments</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 30,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 06 -->
+        <div class="pkg-card reveal reveal-delay-2" data-category="multi-day">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-06.jpg" alt="Package 06" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Multi Day</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 06</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 2 Days / 1 Night
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Extended safari experience with accommodation, multiple game drives, and comprehensive wildlife encounters.</p>
+            <ul class="pkg-card-features">
+              <li>Hotel Accommodation</li>
+              <li>3 Safari Sessions</li>
+              <li>All Meals Included</li>
+              <li>Photography Assistance</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 90,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 07 -->
+        <div class="pkg-card reveal" data-category="photography">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-07.jpg" alt="Package 07" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Photography</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 07</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 6-7 Hours
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Specialized photography safari with extended time at prime wildlife locations for the perfect wildlife shot.</p>
+            <ul class="pkg-card-features">
+              <li>Professional Guide</li>
+              <li>4x4 Safari Jeep</li>
+              <li>Park Entry Fees</li>
+              <li>Refreshments</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 15,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 08 -->
+        <div class="pkg-card reveal reveal-delay-1" data-category="premium">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-08.jpg" alt="Package 08" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Premium</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 08</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: Full Day
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Comprehensive wildlife experience covering different zones of the park with premium services and lunch included.</p>
+            <ul class="pkg-card-features">
+              <li>Expert Naturalist Guide</li>
+              <li>Premium Safari Vehicle</li>
+              <li>All Entry Fees</li>
+              <li>Lunch &amp; Refreshments</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 30,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- Package 09 -->
+        <div class="pkg-card reveal reveal-delay-2" data-category="premium">
+          <div class="pkg-card-img">
+            <img src="images/packages/package-09.jpg" alt="Package 09" loading="lazy"/>
+            <div class="pkg-card-img-overlay"></div>
+            <span class="pkg-card-tag">Premium</span>
+            <div class="pkg-card-img-info">
+              <div class="pkg-card-name">Package 09</div>
+              <div class="pkg-card-duration">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Duration: 2 Days / 1 Night
+              </div>
+            </div>
+          </div>
+          <div class="pkg-card-body">
+            <p class="pkg-card-desc">Extended premium safari experience with luxury accommodation, multiple game drives, and comprehensive wildlife encounters.</p>
+            <ul class="pkg-card-features">
+              <li>Hotel Accommodation</li>
+              <li>3 Safari Sessions</li>
+              <li>All Meals Included</li>
+              <li>Photography Assistance</li>
+            </ul>
+          </div>
+          <div class="pkg-card-footer">
+            <div class="pkg-price-wrap">
+              <span class="pkg-price-from">From</span>
+              <span class="pkg-price-amount">Rs 90,000</span>
+              <span class="pkg-price-per">per person</span>
+            </div>
+            <button class="pkg-book-btn" onclick="window.location.href='contact.html'">Book Now</button>
+          </div>
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="noResults">
+          <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <h3>No packages found</h3>
+          <p>Try selecting a different category</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="cta-banner-bg"></div>
+    <div class="container">
+      <div class="cta-content reveal reveal-scale">
+        <h2>Need a Customized Package?</h2>
+        <p>Let us create the perfect safari experience tailored to your preferences and schedule.</p>
+        <a href="contact.html" class="btn-cta-white">Contact Us Now</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- GET IN TOUCH -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Get in Touch</h2>
+      <p class="section-subtitle reveal reveal-delay-1">We'd love to help plan your perfect safari adventure</p>
+
+      <div class="contact-grid">
+        <div class="reveal reveal-left">
+          <div class="contact-form-wrap">
+            <h3>Send Us a Message</h3>
+            <form class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="Enter Your Name" required/>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email Address</label>
+                <input type="email" id="contactEmail" placeholder="Enter Your Email" required/>
+              </div>
+              <div class="form-group">
+                <label for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" placeholder="Enter Your Phone Number"/>
+              </div>
+              <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" placeholder="Tell us about your safari plans..." required></textarea>
+              </div>
+              <button type="submit" class="form-submit">
+                Send Message
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="reveal reveal-right">
+          <div class="contact-map-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.8503246826!2d81.29145!3d6.28601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae6b5c0b0b0b0b1%3A0x0!2sYala+National+Park!5e0!3m2!1sen!2slk!4v1234567890"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Yala Safari Location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // Hero bg zoom on load
+    window.addEventListener('load', () => {
+      document.getElementById('pageHeroBg')?.classList.add('loaded');
+    });
+
+    // Package Filter 
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const pkgCards   = document.querySelectorAll('.pkg-card');
+    const noResults  = document.getElementById('noResults');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        let visibleCount = 0;
+
+        pkgCards.forEach(card => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          if (match) {
+            card.classList.remove('hidden');
+            card.style.animationDelay = `${(visibleCount % 3) * 0.08}s`;
+            card.classList.remove('pkg-card-animate');
+            void card.offsetWidth;
+            card.classList.add('pkg-card-animate');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        noResults.classList.toggle('visible', visibleCount === 0);
+      });
+    });
+  </script>
+
+</body>
+</html>

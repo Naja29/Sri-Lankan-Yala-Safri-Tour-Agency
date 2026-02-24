@@ -11,22 +11,39 @@
   z-index: 2;
 }
 
-/* Wildlife silhouette background image */
-/* .footer-silhouette-img {
+/* Wildlife silhouette background images */
+.footer-silhouette-wrap {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 220px;
-  object-fit: cover;
-  object-position: bottom center;
   z-index: 1;
-  mix-blend-mode: screen;
-  opacity: 0.55;
+  display: flex;
   pointer-events: none;
   user-select: none;
-} */
+}
+
+.footer-silhouette-img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom center;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footer-silhouette-wrap {
+    height: 160px;
+  }
+  .footer-silhouette-img {
+    width: 100%;
+  }
+  .footer-silhouette-img:last-child {
+    display: none;
+  }
+}
 
 .footer-grid {
   display: grid;
@@ -38,12 +55,14 @@
 
 /* Brand column */
 .footer-brand .footer-logo {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: var(--white);
-  margin-bottom: 16px;
   display: inline-block;
+  margin-bottom: 16px;
+}
+
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
 }
 
 .footer-brand .footer-logo span { color: var(--green-accent); }
