@@ -1,11 +1,7 @@
-/**
- * components.js
- * Dynamically loads the shared header and footer into every page.
- * Usage: Include this script in every HTML page.
- */
+/** Dynamically loads the shared header and footer into every page. */
 
 (function () {
-  // ── Resolve base path ───────────────────────────────────────
+  // Resolve base path 
   // Works whether files are at root or in subdirectories
   function getBasePath() {
     const depth = window.location.pathname
@@ -29,7 +25,7 @@
 
   const base = getBasePath();
 
-  // ── Inject Header ───────────────────────────────────────────
+  // Inject Header 
   function injectHeader() {
     const placeholder = document.getElementById('header-placeholder');
     if (!placeholder) return;
@@ -77,7 +73,7 @@
     initHeader();
   }
 
-  // ── Inject Footer ───────────────────────────────────────────
+  // Inject Footer 
   function injectFooter() {
     const placeholder = document.getElementById('footer-placeholder');
     if (!placeholder) return;
@@ -202,7 +198,7 @@
       </div>
     </footer>
 
-    <!-- ── Floating WhatsApp Button ── -->
+    <!-- Floating WhatsApp Button -->
     <a
       href="https://wa.me/94771234567?text=Hello%20YalaSafari!%20I%27m%20interested%20in%20booking%20a%20safari%20package.%20Could%20you%20please%20share%20more%20details%3F"
       target="_blank"
@@ -224,7 +220,7 @@
     });
   }
 
-  // ── Header Scroll + Mobile Menu Logic ──────────────────────
+  // Header Scroll + Mobile Menu Logic 
   function initHeader() {
     const header = document.getElementById('site-header');
     const hamburger = document.getElementById('navHamburger');
@@ -272,7 +268,7 @@
     });
   }
 
-  // ── Reveal Observer ─────────────────────────────────────────
+  // Reveal Observer 
   window.revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -281,7 +277,7 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  // ── Init on DOM Ready ────────────────────────────────────────
+  // Init on DOM Ready 
   function init() {
     injectHeader();
     injectFooter();

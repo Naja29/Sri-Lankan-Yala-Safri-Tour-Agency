@@ -1,6 +1,6 @@
 <?php
 
-//  admin/dashboard.php
+//  admin/dashboard
 
 require_once __DIR__ . '/includes/auth.php';
 require_once __DIR__ . '/includes/db_config.php';
@@ -16,10 +16,13 @@ function countTable(mysqli $db, string $table, string $where = ''): int {
     return $result ? (int)$result->fetch_assoc()['cnt'] : 0;
 }
 
-$totalPackages  = countTable($db, 'packages');
-$totalServices  = countTable($db, 'services');
-$totalGallery   = countTable($db, 'gallery');
-$newMessages    = countTable($db, 'messages', 'is_read = 0');
+$totalPackages    = countTable($db, 'packages');
+$totalServices    = countTable($db, 'services');
+$totalGallery     = countTable($db, 'gallery');
+$newMessages      = countTable($db, 'messages', 'is_read = 0');
+$pendingReviews   = countTable($db, 'testimonials', "status='pending'");
+$approvedReviews  = countTable($db, 'testimonials', "status='approved'");
+$totalHeroSlides  = countTable($db, 'hero_slides', "status='active'");
 
 // Recent messages (latest 5) 
 $recentMessages = [];
@@ -86,6 +89,7 @@ $greeting = $hour < 12 ? 'Good morning' : ($hour < 17 ? 'Good afternoon' : 'Good
             <div class="stat-number"><?= $totalPackages ?></div>
             <div class="stat-label">Total Packages</div>
           </div>
+          <a href="packages.php" class="stat-card-link">Manage →</a>
         </div>
 
         <div class="stat-card">
@@ -94,6 +98,7 @@ $greeting = $hour < 12 ? 'Good morning' : ($hour < 17 ? 'Good afternoon' : 'Good
             <div class="stat-number"><?= $totalServices ?></div>
             <div class="stat-label">Services Listed</div>
           </div>
+          <a href="services.php" class="stat-card-link">Manage →</a>
         </div>
 
         <div class="stat-card">
@@ -102,14 +107,34 @@ $greeting = $hour < 12 ? 'Good morning' : ($hour < 17 ? 'Good afternoon' : 'Good
             <div class="stat-number"><?= $totalGallery ?></div>
             <div class="stat-label">Gallery Images</div>
           </div>
+          <a href="gallery.php" class="stat-card-link">Manage →</a>
         </div>
 
-        <div class="stat-card">
+        <div class="stat-card <?= $newMessages > 0 ? 'stat-card-alert' : '' ?>">
           <div class="stat-icon">💬</div>
           <div class="stat-info">
             <div class="stat-number"><?= $newMessages ?></div>
             <div class="stat-label">New Messages</div>
           </div>
+          <a href="messages.php" class="stat-card-link">View →</a>
+        </div>
+
+        <div class="stat-card <?= $pendingReviews > 0 ? 'stat-card-alert' : '' ?>">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-info">
+            <div class="stat-number"><?= $pendingReviews ?></div>
+            <div class="stat-label">Pending Reviews</div>
+          </div>
+          <a href="testimonials.php?filter=pending" class="stat-card-link">Review →</a>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">🎬</div>
+          <div class="stat-info">
+            <div class="stat-number"><?= $totalHeroSlides ?></div>
+            <div class="stat-label">Active Hero Slides</div>
+          </div>
+          <a href="hero.php" class="stat-card-link">Manage →</a>
         </div>
 
       </div>
@@ -178,15 +203,23 @@ $greeting = $hour < 12 ? 'Good morning' : ($hour < 17 ? 'Good afternoon' : 'Good
                 <span class="quick-action-icon">🖼️</span>
                 Add Photo
               </a>
+              <a href="testimonials.php" class="quick-action-btn">
+                <span class="quick-action-icon">⭐</span>
+                Reviews
+              </a>
+              <a href="hero.php" class="quick-action-btn">
+                <span class="quick-action-icon">🎬</span>
+                Hero Slides
+              </a>
               <a href="messages.php" class="quick-action-btn">
                 <span class="quick-action-icon">💬</span>
-                View Messages
+                Messages
               </a>
               <a href="settings.php" class="quick-action-btn">
                 <span class="quick-action-icon">⚙️</span>
                 Settings
               </a>
-              <a href="../index.html" target="_blank" class="quick-action-btn">
+              <a href="../index.php" target="_blank" class="quick-action-btn">
                 <span class="quick-action-icon">🌐</span>
                 View Site
               </a>
@@ -242,7 +275,7 @@ $greeting = $hour < 12 ? 'Good morning' : ($hour < 17 ? 'Good afternoon' : 'Good
         </div>
       </div>
 
-    </div><!-- /admin-content -->
+    </div>
   </main>
 </div>
 

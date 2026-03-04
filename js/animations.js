@@ -1,4 +1,4 @@
-/** Scroll-triggered animations, counter animation, parallax effect.*/
+/** Scroll-triggered animations, counter animation, parallax effect. */
 
 (function () {
   'use strict';
@@ -56,13 +56,24 @@
 
   // Stagger Cards on scroll 
   function initStaggerCards() {
-    const grids = document.querySelectorAll('.services-grid, .packages-grid');
-    grids.forEach(grid => {
-      const cards = grid.querySelectorAll('.service-card, .package-card');
-      cards.forEach((card, i) => {
-        card.classList.add('reveal');
-        card.style.transitionDelay = `${i * 0.1}s`;
-        if (window.revealObserver) window.revealObserver.observe(card);
+    const gridSelectors = [
+      { grid: '.services-grid',       cards: '.service-card' },
+      { grid: '.packages-grid',       cards: '.package-card' },
+      { grid: '.why-grid',            cards: '.why-card' },
+      { grid: '.gallery-grid',        cards: '.gallery-item' },
+      { grid: '.gallery-preview-grid',cards: '.gallery-preview-item' },
+      { grid: '.stats-grid',          cards: '.stat-item' },
+      { grid: '.svc-grid',            cards: '.svc-card' },
+      { grid: '.contact-info-grid',   cards: '.info-card' },
+    ];
+
+    gridSelectors.forEach(({ grid, cards }) => {
+      document.querySelectorAll(grid).forEach(g => {
+        g.querySelectorAll(cards).forEach((card, i) => {
+          card.classList.add('reveal');
+          card.style.transitionDelay = `${i * 0.08}s`;
+          if (window.revealObserver) window.revealObserver.observe(card);
+        });
       });
     });
   }
@@ -205,14 +216,135 @@
     sections.forEach(s => observer.observe(s));
   }
 
+  // Section title underline draw animation 
+  function initTitleUnderlines() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('title-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.section-title').forEach(el => observer.observe(el));
+  }
+
+  // About badge bounce in 
+  function initAboutBadge() {
+    const badge = document.querySelector('.about-badge-float');
+    if (!badge) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          badge.classList.add('badge-animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(badge);
+  }
+
+  // CTA section entrance 
+  function initCtaEntrance() {
+    const cta = document.querySelector('.contact-cta');
+    if (!cta) return;
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cta.classList.add('cta-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(cta);
+  }
+
+  // Reveal on scroll 
+  function initReveal() {
+    // Wait for full page paint before enabling animations
+    // requestAnimationFrame x2 ensures browser has painted at least one frame
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+
+        // Mark elements already in viewport as visible BEFORE enabling hide
+        document.querySelectorAll('.reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('visible');
+          }
+        });
+
+        // NOW enable the animation class — only off-screen elements will be hidden
+        document.body.classList.add('animate-ready');
+
+        // Watch off-screen elements
+        window.revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              window.revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+          window.revealObserver.observe(el);
+        });
+
+      });
+    });
+  }
+
+  // Header scroll background 
+  function initHeaderScroll() {
+    const header = document.getElementById('site-header');
+    if (!header) return;
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+  }
+
+  // Navbar hamburger toggle 
+  function initMobileNav() {
+    const hamburger  = document.getElementById('navHamburger');
+    const mobileNav  = document.getElementById('navMobile');
+    const mobileClose= document.getElementById('navMobileClose');
+    if (!hamburger || !mobileNav) return;
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    mobileClose?.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
   // Init 
   function init() {
+    initReveal();
+    initHeaderScroll();
+    initMobileNav();
     initHeroSlider();
     initParallax();
     initCounters();
     initSmoothScroll();
     initFormFeedback();
     initScrollSpy();
+    initTitleUnderlines();
+    initAboutBadge();
+    initCtaEntrance();
     setTimeout(initStaggerCards, 50);
   }
 

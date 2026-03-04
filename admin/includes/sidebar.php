@@ -2,7 +2,6 @@
 
 //  includes/sidebar.php — Shared sidebar for all admin pages
 
-
 $admin        = currentAdmin();
 $currentPage  = basename($_SERVER['PHP_SELF'], '.php');
 
@@ -30,7 +29,7 @@ $initial = strtoupper(substr($admin['name'], 0, 1));
   <div class="sidebar-logo">
     <a href="../index.html">
       <img
-        src="../images/icons/logo-admin.png"
+        src="../images/icons/logo.png"
         alt="YalaSafari"
         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
       />
@@ -49,10 +48,12 @@ $initial = strtoupper(substr($admin['name'], 0, 1));
 
     <div class="nav-section">
       <div class="nav-section-label">Manage</div>
+      <?= navItem('hero.php',     '🎬', 'Hero Slider','hero',     $currentPage) ?>
       <?= navItem('packages.php', '📦', 'Packages',  'packages',  $currentPage) ?>
       <?= navItem('services.php', '🔔', 'Services',  'services',  $currentPage) ?>
       <?= navItem('gallery.php',  '🖼️', 'Gallery',   'gallery',   $currentPage) ?>
-      <?= navItem('messages.php', '💬', 'Messages',  'messages',  $currentPage, $unreadCount) ?>
+      <?= navItem('messages.php',     '💬', 'Messages',     'messages',     $currentPage, $unreadCount) ?>
+      <?= navItem('testimonials.php', '⭐', 'Testimonials', 'testimonials', $currentPage) ?>
     </div>
 
     <div class="nav-section">

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block admin area from search engines
+Disallow: /admin/
+Disallow: /includes/
+
+# Sitemap location
+Sitemap: yalasafari.com/sitemap.php

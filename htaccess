@@ -1,0 +1,13 @@
+Options -Indexes
+
+# Enable Rewrite 
+RewriteEngine On
+RewriteBase /yala-safari/
+
+# Custom 404 
+ErrorDocument 404 /yala-safari/404.php
+
+# Redirect .html to .php (301 permanent) 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)\.html$ $1.php [R=301,L]
